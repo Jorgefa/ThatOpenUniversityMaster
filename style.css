@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --primary: #029AE0;
-  --primary-100: #073044;
-  --primary-200: #415A66;
-  --primary-300: #017CB3;
-  --primary-400: #50B6E6;
-  --background: #202124;
-  --background-100: #26282b;
-  --background-200: #3b3c3f;
+  --primary: #b6b6b6;
+  --primary-100: #7c7c7c;
+  --primary-200: #4e4e4e;
+  --primary-300: #313131;
+  --primary-400: #202020;
+  --background: #ffffff;
+  --background-100: #eeeeee;
+  --background-200: #e0e0e0;
   --font-xs: 10px;
   --font-sm: 12px;
   --font-base: 14px;
@@ -19,7 +19,7 @@
 }
 
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   font-size: var(--font-base);
@@ -31,7 +31,7 @@ body {
   grid-template-areas: 'sidebar content';
   height: 100vh;
   background-color: var(--background);
-  color: #fff;
+  color: #000000;
 }
 
 
@@ -59,7 +59,7 @@ button {
   height: 40px;
   font-size: 14px;
   background-color: var(--primary);
-  color: white;
+  color: rgb(0, 0, 0);
   border-radius: 100px;
   border: none;
   display: flex;
@@ -172,7 +172,7 @@ header {
 }
 
 .action-icon:hover {
-  color: white;
+  color: rgb(0, 0, 0);
   background-color: var(--primary);
 }
 
@@ -193,7 +193,7 @@ form {
   width: 450px; 
   border-radius: 10px; 
   background-color: var(--background-100);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 form h2 {
@@ -224,7 +224,7 @@ label {
 }
 
 input, textarea, select {
-  color: white; 
+  color: rgb(0, 0, 0); 
 	background-color: var(--background-200);
   padding: 15px; 
   border-radius: 8px; 
