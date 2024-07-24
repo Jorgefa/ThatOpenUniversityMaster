@@ -1,0 +1,20 @@
+DONE
+Remember about project cards? Well, find the way to set the project icon as the first two letters of the project’s name. They should be uppercased using CSS rules.
+
+Set a random color to the icon background of each project card (tip: you may create an array of 5 or 6 possible colors and then let the function to randomly select one of them).
+
+TODO
+
+Create a simple input validation in which the app doesn’t create a project if the name length is less than 5 characters.
+
+When creating the project based on the form information, give a default date in case user doesn’t specify one.
+
+Allow the user to update the project information from the details page.
+
+Let the user create ToDos by using the corresponding button. Store the ToDo information inside the projects data.
+
+While exporting the project information, make sure the ToDos are also exported.
+
+Update project information if a project imported from JSON already exists.
+
+Allow the user to specify a status for each ToDo, both when created and when it needs to be updated. Also, change the background color of the ToDo card based on it’s current state.
