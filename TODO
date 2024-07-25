@@ -3,11 +3,13 @@ Remember about project cards? Well, find the way to set the project icon as the 
 
 Set a random color to the icon background of each project card (tip: you may create an array of 5 or 6 possible colors and then let the function to randomly select one of them).
 
-TODO
-
 Create a simple input validation in which the app doesn’t create a project if the name length is less than 5 characters.
 
 When creating the project based on the form information, give a default date in case user doesn’t specify one.
+
+TODO
+
+
 
 Allow the user to update the project information from the details page.
 

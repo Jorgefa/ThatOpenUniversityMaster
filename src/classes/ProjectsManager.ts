@@ -23,6 +23,12 @@ export class ProjectsManager {
     if (nameInUse) {
       throw new Error(`A project with the name "${data.name}" already exists`)
     }
+    if (data.name.length < 5) {
+      throw new Error('Project name must have at least 5 characters')
+    }
+    if(isNaN(data.finishDate.getTime())) {
+      data.finishDate = new Date()
+    }
     const project = new Project(data)
     project.ui.addEventListener("click", () => {
       const projectsPage = document.getElementById("projects-page")
