@@ -7,11 +7,14 @@ Create a simple input validation in which the app doesn’t create a project if 
 
 When creating the project based on the form information, give a default date in case user doesn’t specify one.
 
-TODO
-
-
+DOING
 
 Allow the user to update the project information from the details page.
+-Project modal now outside project page. Navigation from project to details and shwoing new project form working
+-New project form showing when clicking in editting. Now we need to update the form with edditing project information and submitt it to udapte the project info
+
+
+TODO
 
 Let the user create ToDos by using the corresponding button. Store the ToDo information inside the projects data.
 

@@ -68,7 +68,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--primary-400);
+  background-color: var(--primary-100);
 }
 
 .page {
@@ -108,9 +108,11 @@ button:hover {
   column-gap: 10px;
 }
 
+/*
 #nav-buttons li:hover {
   background-color: var(--primary);
 }
+*/
 
 /* Content styles */
 

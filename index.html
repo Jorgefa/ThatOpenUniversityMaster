@@ -11,55 +11,55 @@
   <aside id="sidebar">
     <img id="company-logo" src="./assets/LogoNonome01.png" alt="Nonome">
     <ul id="nav-buttons">
-      <li><span class="material-icons-round">apartment</span>Projects</li>
-      <li><span class="material-icons-round">people</span>Users</li>
+      <li><button id = "page-projects-btn" style="display: flex; width: 100%;"><span class="material-icons-round">apartment</span>Projects</button></li>
+      <li><button id = "page-users-btn" style="display: flex; width: 100%;"><span class="material-icons-round">people</span>Users</button></li>
     </ul>
   </aside>
   <main id="content">
-    <div class="page" id="projects-page" style="display: flex;">
-      <dialog id="new-project-modal">
-        <form id="new-project-form">
-          <h2>New Project</h2>
-          <div class="input-list">
-            <div class="form-field-container">
-              <label><span class="material-icons-round">apartment</span>Name</label>
-              <input name="name" type="text" placeholder="What's the name of your project?">
-              <p style="color: gray; font-size: var(--font-sm); margin-top: 5px; font-style: italic;">TIP: Give it a short name</p>
-            </div>
-            <div class="form-field-container">
-              <label><span class="material-icons-round">subject</span>Description</label>
-              <textarea name="description" cols="30" rows="5" placeholder="Give your project a nice description! So people is jealous about it."></textarea>
-            </div>
-            <div class="form-field-container">
-              <label><span class="material-icons-round">person</span>Role</label>
-              <select name="userRole">
-                <option>Architect</option>
-                <option>Engineer</option>
-                <option>Developer</option>
-              </select>
-            </div>
-            <div class="form-field-container">
-              <label><span class="material-icons-round">not_listed_location</span>Status</label>
-              <select name="status">
-                <option>Pending</option>
-                <option>Active</option>
-                <option>Finished</option>
-              </select>
-            </div>
-            <div class="form-field-container">
-              <label for="finishDate">
-                <span class="material-icons-round">calendar_month</span>
-                Finish Date
-              </label>
-              <input name="finishDate" type="date"></input>
-            </div>
-            <div style="display: flex; margin: 10px 0px 10px auto; column-gap: 10px;">
-              <button type="button" style="background-color: transparent;">Cancel</button>
-              <button type="submit" style="background-color: #b6b6b6;">Accept</button>
-            </div>
+    <dialog id="new-project-modal">
+      <form id="new-project-form">
+        <h2>New Project</h2>
+        <div class="input-list">
+          <div class="form-field-container">
+            <label><span class="material-icons-round">apartment</span>Name</label>
+            <input name="name" type="text" placeholder="What's the name of your project?">
+            <p style="color: gray; font-size: var(--font-sm); margin-top: 5px; font-style: italic;">TIP: Give it a short name</p>
           </div>
-        </form>
-      </dialog>
+          <div class="form-field-container">
+            <label><span class="material-icons-round">subject</span>Description</label>
+            <textarea name="description" cols="30" rows="5" placeholder="Give your project a nice description! So people is jealous about it."></textarea>
+          </div>
+          <div class="form-field-container">
+            <label><span class="material-icons-round">person</span>Role</label>
+            <select name="userRole">
+              <option>Architect</option>
+              <option>Engineer</option>
+              <option>Developer</option>
+            </select>
+          </div>
+          <div class="form-field-container">
+            <label><span class="material-icons-round">not_listed_location</span>Status</label>
+            <select name="status">
+              <option>Pending</option>
+              <option>Active</option>
+              <option>Finished</option>
+            </select>
+          </div>
+          <div class="form-field-container">
+            <label for="finishDate">
+              <span class="material-icons-round">calendar_month</span>
+              Finish Date
+            </label>
+            <input name="finishDate" type="date"></input>
+          </div>
+          <div style="display: flex; margin: 10px 0px 10px auto; column-gap: 10px;">
+            <button id="new-project-form-cancelBtn"  type="button" style="background-color: transparent;">Cancel</button>
+            <button id="new-project-form-acceptBtn" type="submit" style="background-color: #b6b6b6;">Accept</button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+    <div class="page" id="projects-page" style="display: flex;">
       <header>
         <h2>Projects</h2>
         <div style="display: flex; align-items: center; column-gap: 15px;">
@@ -73,8 +73,8 @@
     <div class="page" id="project-details" style="display: none">
       <header>
         <div>
-          <h2 data-project-info="name">Hospital Center</h2>
-          <p style="color: #969696">Community hospital located at downtown</p>
+          <h2 data-project-info="name">Default Project</h2>
+          <p style="color: #969696">Default project description</p>
         </div>
       </header>
       <div class="main-page-content">
@@ -82,7 +82,7 @@
           <div class="dashboard-card" style="padding: 30px 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; padding: 0px 30px; margin-bottom: 30px;">
               <p style="font-size: 20px; color: #ffffff; font-weight: bold; background-color: #000000; aspect-ratio: 1; border-radius: 100%; padding: 12px;">HC</p>
-              <button class="btn-secondary"><p style="width: 100%;">Edit</p></button>
+              <button id = "edit-project-btn" class="btn-secondary"><p style="width: 100%;">Edit</p></button>
             </div>
             <div style="padding: 0 30px;">
               <div>
