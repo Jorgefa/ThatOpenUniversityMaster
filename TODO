@@ -10,7 +10,7 @@ When creating the project based on the form information, give a default date in 
 DOING
 
 Allow the user to update the project information from the details page.
--Project modal now outside project page. Navigation from project to details and shwoing new project form working
+-Project modal now outside project page. Navigation from project to details and showing new project form working
 -New project form showing when clicking in editting. Now we need to update the form with edditing project information and submitt it to udapte the project info
 
 

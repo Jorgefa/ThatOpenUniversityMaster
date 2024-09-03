@@ -72,8 +72,19 @@ const editProjectBtn = document.getElementById("edit-project-btn")
 if (editProjectBtn) {
   editProjectBtn.addEventListener("click", () => {
     try {
-      console.log("EDITTING");
-      showModal("new-project-modal");
+      showModal("edit-project-modal");
+      const editProjectForm = document.getElementById("edit-project-form")
+      if (editProjectForm && editProjectForm instanceof HTMLFormElement) {
+        const nameInput = editProjectForm?.querySelector<HTMLInputElement>('input[name="name"]');
+        if (nameInput) {
+            nameInput.value = "New Project Name";
+        } else {
+            console.error("Name input not found");
+        }
+      }
+      console.log(editProjectForm)
+      const newProjectData = projectsManager.curProject
+      projectsManager.editProject(projectsManager.curProject.id, newProjectData)
     } catch (err) {
       alert(err)
     }
@@ -116,6 +127,29 @@ if (projectForm && projectForm instanceof HTMLFormElement) {
     } catch (err) {
       alert(err)
     }
+  })
+} else {
+	console.warn("The project form was not found. Check the ID!")
+}
+
+//Edit project form
+const editProjectForm = document.getElementById("edit-project-form")
+if (editProjectForm && editProjectForm instanceof HTMLFormElement) {
+  editProjectForm.addEventListener("show", (e) => {
+    e.preventDefault()
+    console.log("updating form");
+    (document.querySelector('input[name="name"]') as HTMLInputElement).value = project.name;
+
+    
+    const formData = new FormData(editProjectForm)
+    const projectData: IProject = {
+      name: formData.get("name") as string,
+      description: formData.get("description") as string,
+      status: formData.get("status") as ProjectStatus,
+      userRole: formData.get("userRole") as UserRole,
+      finishDate: new Date(formData.get("finishDate") as string)
+    }
+   
   })
 } else {
 	console.warn("The project form was not found. Check the ID!")

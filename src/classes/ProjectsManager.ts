@@ -3,6 +3,7 @@ import { IProject, Project } from "./Project"
 export class ProjectsManager {
   list: Project[] = []
   ui: HTMLElement
+  curProject: Project
 
   constructor(container: HTMLElement) {
     this.ui = container
@@ -14,6 +15,7 @@ export class ProjectsManager {
       finishDate: new Date()
     })
   }
+
 
   newProject(data: IProject) {
     const projectNames = this.list.map((project) => {
@@ -44,6 +46,8 @@ export class ProjectsManager {
   }
 
   private setDetailsPage(project: Project) {
+    if(!project) { return}
+    this.curProject = project
     const detailsPage = document.getElementById("project-details")
     if (!detailsPage) { return }
     const name = detailsPage.querySelector("[data-project-info='name']")
@@ -53,6 +57,13 @@ export class ProjectsManager {
     const cardName = detailsPage.querySelector("[data-project-info='cardName']")
     if (cardName) { cardName.textContent = project.name }
     const cardDescription = detailsPage.querySelector("[data-project-info='cardDescription']")
+  }
+
+  selectProject(id: string){
+    const project = this.getProject(id)
+    if (!project) {return}
+    console.log(`Selected "${project.name}" project`);
+    
   }
 
   getProject(id: string) {
@@ -70,6 +81,32 @@ export class ProjectsManager {
       return project.id !== id
     })
     this.list = remaining
+  }
+
+  editProject(id: string, data: IProject) {
+    const project = this.getProject(id)
+    if (!project) { return }
+
+    const projectNames = this.list.map((project) => {
+      return project.name
+    })
+    const nameInUse = projectNames.includes(data.name)
+    if (nameInUse) {
+      throw new Error(`A project with the name "${data.name}" already exists`)
+    }
+    if (data.name.length < 5) {
+      throw new Error('Project name must have at least 5 characters')
+    }
+    project.name = data.name
+
+    if(isNaN(data.finishDate.getTime())) {
+      data.finishDate = new Date()
+    }
+    project.finishDate = data.finishDate    
+
+    this.setDetailsPage(project)
+    
+    return project
   }
   
   exportToJSON(fileName: string = "projects") {
